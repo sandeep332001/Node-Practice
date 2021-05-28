@@ -16,22 +16,23 @@ const port = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(userRouter);
-// app.use(taskRouter);
+app.use(taskRouter);
 
 app.listen(port, () => {
   console.log("Server is up on port " + port);
 });
 
-// const jwt = require("jsonwebtoken");
+// const Task = require("./models/task");
+// const User = require("./models/user");
 
-// const myFuction = async () => {
-//   const token = jwt.sign({ _id: "1bc123" }, "thisismynewcourse", {
-//     expiresIn: "7 days",
-//   });
-//   console.log(token);
+// const main = async () => {
+//   const task = await Task.findById("60b0048dee09b855177b981c");
+//   await task.populate("owner").execPopulate();
+//   console.log(task.owner);
 
-//   const data = jwt.verify(token, "thisismynewcourse");
-//   console.log(data);
+//   // const user = await User.findById("60b0038bee09b855177b9818");
+//   // await user.populate("tasks").execPopulate();
+//   // console.log(user.tasks);
 // };
 
-// myFuction();
+// main();
